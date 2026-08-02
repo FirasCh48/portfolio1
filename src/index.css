@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Smooth root & body theme transition */
+html,
+body {
+  transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active Theme Transition overlay modifier applied during theme toggle */
+.is-changing-theme,
+.is-changing-theme *,
+.is-changing-theme *::before,
+.is-changing-theme *::after {
+  transition: background-color 0.35s ease,
+              color 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              fill 0.35s ease,
+              stroke 0.35s ease !important;
+}
+
+/* View Transitions API smooth cross-fade */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Print to PDF - Clean Resume Layout & Styles */
+@media print {
+  @page {
+    margin: 1cm 1cm 1cm 1cm;
+    size: A4 portrait;
+  }
+
+  /* Hide background elements, navigation, canvas animations, interactive buttons & floating action bars */
+  header,
+  #main_header,
+  aside,
+  footer,
+  canvas,
+  .no-print,
+  .print\:hidden,
+  button,
+  .floating-social-bar,
+  #back_to_top_btn {
+    display: none !important;
+  }
+
+  /* Reset html & body for full document multi-page printing */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    transition: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ensure modal print container overlays cleanly as full document */
+  .modal-print-container {
+    position: static !important;
+    inset: auto !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  .modal-print-content {
+    position: static !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-radius: 0 !important;
+  }
+
+  /* Reset layout constraints & shadows for crisp document printing */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Force dark backgrounds to white/light slate for ink efficiency */
+  .bg-slate-900,
+  .bg-slate-950,
+  .bg-slate-800,
+  .dark\:bg-slate-900,
+  .dark\:bg-slate-950,
+  .dark\:bg-slate-800 {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .text-white,
+  .dark\:text-white,
+  .dark\:text-slate-200,
+  .dark\:text-slate-300 {
+    color: #0f172a !important;
+  }
+
+  .text-slate-400,
+  .dark\:text-slate-400,
+  .text-slate-500,
+  .dark\:text-slate-500 {
+    color: #475569 !important;
+  }
+
+  /* Prevent page breaks inside cards and key resume sections */
+  section,
+  article,
+  .break-inside-avoid,
+  .card,
+  div[id^="experience"],
+  div[id^="projects"],
+  div[id^="education"] {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Ensure links are clean and legible */
+  a {
+    color: #2563eb !important;
+    text-decoration: underline !important;
+  }
+
+  /* Remove absolute/fixed positioning constraints from main wrapper */
+  main,
+  #root {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+}
