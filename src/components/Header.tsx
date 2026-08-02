@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
+import profilePhoto from "../assets/images/me.png";
 import { Menu, X, FileText, ZoomIn, Printer, Globe, Loader2 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { ThemeToggle } from './ThemeToggle';
 import { useLanguage } from '../context/LanguageContext';
 import { ProfilePhotoModal } from './ProfilePhotoModal';
 import { exportToPdf } from '../utils/pdfExport';
+import profilePhoto from "../assets/images/me.png";
 
 interface HeaderProps {
   onOpenResume: () => void;
@@ -79,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
           >
             <div className="w-10 h-10 rounded-[14px] overflow-hidden bg-slate-950 relative">
               <img
-                src="/src/assets/images/me.png"
+                src={profilePhoto}
                 alt="Firas CHABBOUH"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -140,7 +142,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
             )}
             <span className="hidden md:inline">
               {isExportingPdf
-                ? (language === 'fr' ? 'Génération PDF...' : 'Generating PDF...')
+                ? (language === 'fr' ? 'GÃ©nÃ©ration PDF...' : 'Generating PDF...')
                 : (language === 'fr' ? 'Imprimer / Exporter PDF' : 'Print / Export PDF')}
             </span>
           </button>
@@ -210,9 +212,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                       ? 'bg-blue-600 text-white shadow-md scale-105'
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                   }`}
-                  title="Passer en Français"
+                  title="Passer en FranÃ§ais"
                 >
-                  <span>🇫🇷</span>
+                  <span>ðŸ‡«ðŸ‡·</span>
                   <span>FR</span>
                 </button>
                 <button
@@ -225,7 +227,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                   }`}
                   title="Switch to English"
                 >
-                  <span>🇬🇧</span>
+                  <span>ðŸ‡¬ðŸ‡§</span>
                   <span>EN</span>
                 </button>
               </div>
@@ -249,7 +251,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                 )}
                 <span>
                   {isExportingPdf
-                    ? (language === 'fr' ? 'Génération PDF...' : 'Generating PDF...')
+                    ? (language === 'fr' ? 'GÃ©nÃ©ration PDF...' : 'Generating PDF...')
                     : (language === 'fr' ? 'Imprimer / Exporter PDF' : 'Print / Export PDF')}
                 </span>
               </button>

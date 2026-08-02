@@ -1,4 +1,5 @@
-import React from "react";
+﻿import React from "react";
+import profilePhoto from "../assets/images/me.png";
 import { ArrowUp, Github, Linkedin, Mail, Heart } from "lucide-react";
 import { PERSONAL_INFO } from "../data/portfolioData";
 import { useLanguage } from "../context/LanguageContext";
@@ -18,7 +19,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl p-[2px] bg-gradient-to-tr from-blue-600 to-indigo-600 overflow-hidden shrink-0">
               <img
-                src="/src/assets/images/me.png"
+               src={profilePhoto}
                 alt="Firas CHABBOUH"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover rounded-[10px]"
@@ -30,8 +31,8 @@ export const Footer: React.FC = () => {
               </div>
               <div className="text-xs text-blue-400">
                 {isEn
-                  ? "Software Engineering Student • ISAMM Manouba"
-                  : "Élève Ingénieur en Génie Logiciel • ISAMM Manouba"}
+                  ? "Software Engineering Student â€¢ ISAMM Manouba"
+                  : "Ã‰lÃ¨ve IngÃ©nieur en GÃ©nie Logiciel â€¢ ISAMM Manouba"}
               </div>
             </div>
           </div>
@@ -44,7 +45,7 @@ export const Footer: React.FC = () => {
               {isEn ? "Projects" : "Projets"}
             </a>
             <a href="#skills" className="hover:text-blue-400 transition-colors">
-              {isEn ? "Skills" : "Compétences"}
+              {isEn ? "Skills" : "CompÃ©tences"}
             </a>
             <a
               href="#certifications"
@@ -56,7 +57,7 @@ export const Footer: React.FC = () => {
               href="#experience"
               className="hover:text-blue-400 transition-colors"
             >
-              {isEn ? "Experiences" : "Expériences"}
+              {isEn ? "Experiences" : "ExpÃ©riences"}
             </a>
             <a href="#blog" className="hover:text-blue-400 transition-colors">
               {isEn ? "Blog" : "Blog"}
@@ -95,13 +96,13 @@ export const Footer: React.FC = () => {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
           <div>
-            © {new Date().getFullYear()} Firas CHABBOUH.{" "}
-            {isEn ? "All rights reserved." : "Tous droits réservés."}
+            Â© {new Date().getFullYear()} Firas CHABBOUH.{" "}
+            {isEn ? "All rights reserved." : "Tous droits rÃ©servÃ©s."}
           </div>
           <div className="flex items-center gap-1">
             {isEn
               ? "Built with passion using React 18, Three.js 3D, Gemini 2.5 API & Tailwind CSS."
-              : "Conçu avec passion & React 18, Three.js 3D, Gemini 2.5 API et Tailwind CSS."}
+              : "ConÃ§u avec passion & React 18, Three.js 3D, Gemini 2.5 API et Tailwind CSS."}
           </div>
         </div>
       </div>

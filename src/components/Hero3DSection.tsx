@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
+import profilePhoto from "../assets/images/me.png";
 import {
   ArrowRight,
   Download,
@@ -16,6 +17,7 @@ import { PERSONAL_INFO } from "../data/portfolioData";
 import { ThreeCanvas3D } from "./ThreeCanvas3D";
 import { Tilt3DCard } from "./Tilt3DCard";
 import { useLanguage } from "../context/LanguageContext";
+import profilePhoto from "../assets/images/me.png";
 
 interface Hero3DSectionProps {
   onOpenResume: () => void;
@@ -112,14 +114,14 @@ export const Hero3DSection: React.FC<Hero3DSectionProps> = ({
   // Helper to format bio text with consistent highlight color while typing
   const formatFormattedBio = (text: string) => {
     const regex =
-      /(ISAMM Manouba|Full-Stack \(React, Spring Boot, FastAPI\)|IA Générative \(RAG, Gemini 2\.5, LangChain\)|Generative AI integration \(RAG, Gemini 2\.5, LangChain\)|Generative AI \(RAG, Gemini 2\.5, LangChain\)|3D Interactives & IoT \(Unity, Blender, CAO\)|3D & IoT \(Unity, Blender, CAD\))/g;
+      /(ISAMM Manouba|Full-Stack \(React, Spring Boot, FastAPI\)|IA GÃ©nÃ©rative \(RAG, Gemini 2\.5, LangChain\)|Generative AI integration \(RAG, Gemini 2\.5, LangChain\)|Generative AI \(RAG, Gemini 2\.5, LangChain\)|3D Interactives & IoT \(Unity, Blender, CAO\)|3D & IoT \(Unity, Blender, CAD\))/g;
     const parts = text.split(regex);
 
     return parts.map((part, idx) => {
       if (
         part === "ISAMM Manouba" ||
         part === "Full-Stack (React, Spring Boot, FastAPI)" ||
-        part.includes("IA Générative") ||
+        part.includes("IA GÃ©nÃ©rative") ||
         part.includes("Generative AI") ||
         part.includes("3D")
       ) {
@@ -290,7 +292,7 @@ export const Hero3DSection: React.FC<Hero3DSectionProps> = ({
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-2xl p-[2px] bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 shadow-lg overflow-hidden shrink-0">
                       <img
-                        src="/src/assets/images/me.png"
+                        src={profilePhoto}
                         alt="Firas CHABBOUH"
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover rounded-[14px]"
@@ -301,13 +303,13 @@ export const Hero3DSection: React.FC<Hero3DSectionProps> = ({
                         Firas CHABBOUH
                       </div>
                       <div className="text-xs text-blue-600 dark:text-blue-400 font-medium">
-                        ISAMM Manouba •{" "}
-                        {isEn ? "Software Engineering" : "Cycle Ingénieur"}
+                        ISAMM Manouba â€¢{" "}
+                        {isEn ? "Software Engineering" : "Cycle IngÃ©nieur"}
                       </div>
                     </div>
                   </div>
                   <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold border border-emerald-500/20">
-                    {isEn ? "2nd Year" : "2e Année"}
+                    {isEn ? "2nd Year" : "2e AnnÃ©e"}
                   </span>
                 </div>
 
@@ -354,7 +356,7 @@ export const Hero3DSection: React.FC<Hero3DSectionProps> = ({
                       <Award className="w-4 h-4 text-emerald-500 shrink-0" />
                       <div>
                         <div className="font-bold text-slate-900 dark:text-emerald-200">
-                          {isEn ? "Certified UI/UX" : "UI/UX Certifié"}
+                          {isEn ? "Certified UI/UX" : "UI/UX CertifiÃ©"}
                         </div>
                         <div className="text-[10px] text-slate-500 dark:text-slate-400">
                           Uxcel & Centre Elife
@@ -395,8 +397,8 @@ export const Hero3DSection: React.FC<Hero3DSectionProps> = ({
                 {/* Footer hint */}
                 <div className="text-center pt-1 text-[11px] text-slate-400 dark:text-slate-500 italic">
                   {isEn
-                    ? "💡 Hover over card to interact with 3D tilt"
-                    : "💡 Survolez cette carte pour tester l'effet 3D interactif"}
+                    ? "ðŸ’¡ Hover over card to interact with 3D tilt"
+                    : "ðŸ’¡ Survolez cette carte pour tester l'effet 3D interactif"}
                 </div>
               </div>
             </Tilt3DCard>

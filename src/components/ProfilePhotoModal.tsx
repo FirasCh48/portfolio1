@@ -1,4 +1,5 @@
-import React from "react";
+﻿import React from "react";
+import profilePhoto from "../assets/images/me.png";
 import {
   X,
   ExternalLink,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { PERSONAL_INFO } from "../data/portfolioData";
+import profilePhoto from "../assets/images/me.png";
 
 interface ProfilePhotoModalProps {
   isOpen: boolean;
@@ -63,7 +65,7 @@ export const ProfilePhotoModal: React.FC<ProfilePhotoModalProps> = ({
 
               <div className="relative z-10 w-full max-w-[280px] aspect-square rounded-2xl p-1 bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 shadow-2xl">
                 <img
-                  src="/src/assets/images/me.png"
+                  src={profilePhoto}
                   alt="Firas CHABBOUH"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover rounded-xl shadow-inner transition-transform duration-500 group-hover:scale-105"
@@ -83,27 +85,27 @@ export const ProfilePhotoModal: React.FC<ProfilePhotoModalProps> = ({
                 <div className="space-y-1">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 text-xs font-bold border border-blue-500/20">
                     <Sparkles className="w-3.5 h-3.5" />
-                    <span>Profil Ingénieur IA & Full-Stack</span>
+                    <span>Profil IngÃ©nieur IA & Full-Stack</span>
                   </div>
                   <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
                     Firas CHABBOUH
                   </h3>
                   <p className="text-xs font-semibold text-blue-600 dark:text-blue-400">
-                    Software & AI Engineer • ISAMM Manouba
+                    Software & AI Engineer â€¢ ISAMM Manouba
                   </p>
                 </div>
 
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Ingénieur passionné par l'IA générative (RAG / LLMs), le
-                  développement d'architectures applicatives web performantes et
-                  la création d'expériences 3D interactives.
+                  IngÃ©nieur passionnÃ© par l'IA gÃ©nÃ©rative (RAG / LLMs), le
+                  dÃ©veloppement d'architectures applicatives web performantes et
+                  la crÃ©ation d'expÃ©riences 3D interactives.
                 </p>
 
                 {/* Status List */}
                 <div className="space-y-2 text-xs">
                   <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Disponible pour Opportunités & Projets</span>
+                    <span>Disponible pour OpportunitÃ©s & Projets</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
                     <MapPin className="w-4 h-4 text-blue-500 shrink-0" />
